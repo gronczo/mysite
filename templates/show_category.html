@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block main %}
+{% for category in categories %}
+    <p>id: {{category.id}}</p>
+    <p>tytuł: {{category.title}}</p>
+    <p>opis: {{category.description}}</p>
+    <br/>
+{% endfor %}
+{% endblock %}

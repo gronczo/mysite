@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block main %}
+<h2>logowanie:</h2>
+<br/>
+<form action="/login_user/" method="post">{% csrf_token %}
+    <table>
+        {{ login_form }}
+        <tr><th></th><th align="right"><input type="submit" value="zaloguj"></th></tr>
+    </table>
+</form>
+{% endblock %}

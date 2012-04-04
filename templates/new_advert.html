@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block main %}
+    <h2>dodaj nowe ogłoszenie:</h2>
+    <br/>
+    <form action="/new_advert/" enctype="multipart/form-data" method="post">{% csrf_token %}
+        <table>
+            {{ advertiesment_form }}
+            {{ attachment_form }}
+            <tr>
+                <th></th>
+                <th align="right"><input type="submit" value="Zapisz"></th></tr>
+        </table>
+    </form>
+{% endblock %}

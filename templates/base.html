@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 3.0 License
+
+Name       : Individual
+Description: A two-column, fixed-width design with a bright color scheme.
+Version    : 1.0
+Released   : 20120201
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Individual by Free CSS Templates</title>
+<link href="http://fonts.googleapis.com/css?family=Bitter" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}style.css" />
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="jquery.formerize-0.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#search').formerize();
+	});
+</script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="#">ogłoszenia.pl</a></h1>
+		</div>
+		<div id="search">
+			<form action="/search/" method="post">{% csrf_token %}
+				<div>
+					<input class="form-text" name="search" size="44" maxlength="100" title="Search our website" />
+				</div>
+			</form>
+		</div>
+		<div id="menu">
+			<ul>
+				<li class="first current_page_item"><a href="/show_advert/">ogłoszenia</a></li>
+				<li><a href="/new_advert/">dodaj</a></li>
+				<!--<li><a href="/search/">szukaj</a></li>-->
+				<li><a href="/my_advert">moje ogłoszenia</a></li>
+				<li><a href="/login_user/">zaloguj</a></li>
+				<li><a href="/logout_user/">wyloguj</a></li>
+				<li><a href="/registration/">rejestracja</a></li>
+                <li><a href="/user/">konto</a></li>
+				<li class="last"><a href="/admin/">admin</a></li>
+			</ul>
+			<br class="clearfix" />
+		</div>
+	</div>
+	<div id="page">
+		{% block main %}
+		{% endblock %}
+
+		<br class="clearfix" />
+		</div>
+		<br class="clearfix" />
+	</div>
+</div>
+<div id="footer">
+
+</div>
+</body>
+</html>

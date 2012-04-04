@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block main %}
+<h2>rejestracja nowego użtkownika:</h2>
+<br/>
+<form action="/registration/" method="post">{% csrf_token %}
+    <table>
+        <tr>
+            <th><label>login:</label></th>
+            <th><input type="text" name="username" value=""/></th>
+        </tr>
+        <tr>
+            <th><label>imię:</label></th>
+            <th><input type="text" name="first_name" value=""/></th>
+        </tr>
+        <tr>
+            <th><label>nazwisko:</label></th>
+            <th><input type="text" name="last_name" value=""/></th>
+        </tr>
+        <tr>
+            <th><label>email:</label></th>
+            <th><input type="text" name="email" value=""/></th>
+        </tr>
+        <tr>
+            <th><label>hasło:</label></th>
+            <th><input type="password" name="password" value=""/></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th align="right"><input type="submit" value="dodaj"></th></tr>
+    </table>
+</form>
+{% endblock %}

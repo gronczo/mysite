@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block main %}
+    <h2>dodaj nowe ogłoszenie:</h2>
+    <br/>
+        <table width="100%" border="1">
+            <tr>
+                <th width="160px" align="left">login:</th>
+                <th><label>{{user.username}}</label></th>
+            </tr>
+            <tr>
+                <th align="left">imię:</th>
+                <th><label>{{user.first_name}}</label></th>
+            </tr>
+            <tr>
+                <th align="left">nazwisko:</th>
+                <th><label>{{user.last_name}}</label></th>
+            </tr>
+            <tr>
+                <th align="left">email:</th>
+                <th><label>{{user.email}}</label></th>
+            </tr>
+        </table>
+    </form>
+{% endblock %}

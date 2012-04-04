@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block main %}
+    <h2>moje ogłoszenia:</h2>
+    <br/>
+    {% for advert in adverts %}
+        <table width="100%" border="1">
+            <tr><th width="20%" align="left"><label>Podkategoria: </label></th><th><label>{{advert.subcategory.title}}</label></th></tr>
+            <tr><th align="left"><label>Tytuł: </label></th><th><label>{{advert.title}}</label></th></tr>
+            <tr><th align="left"><label>Opis: </label></th><th><label>{{advert.description}}</label></th></tr>
+            <tr><th align="left"><label>Cena</label></th><th><label>{{advert.pirce}}</label></th></tr>
+            <tr><th align="left"><label>Kontakt</label></th><th><label>{{advert.contact}}</label></th></tr>
+        </table>
+        <a href="/show_advert/{{advert.id}}">pokaz</a>
+        <a href="/edit_advert/{{advert.id}}">edytuj</a>
+        <a href="/delete_advert/{{advert.id}}">usun</a>
+        <br/><br/>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block main %}
+<form action="/new_subcategory/" method="post">{% csrf_token %}
+    <table>
+        {{ subcategory_form }}
+        <tr><th><input type="submit" value="Zapisz"></th></tr>
+    </table>
+</form>
+{% endblock %}

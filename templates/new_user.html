@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block main %}
+<form action="/new_user/" method="post">{% csrf_token %}
+    <table>
+        {{ user_form }}
+        <tr><th><input type="submit" value="Zapisz"></th></tr>
+    </table>
+</form>
+{% endblock %}

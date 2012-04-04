@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block main %}
+    <h2>wybrane ogłoszenie:</h2>
+    <table width="100%" border="1">
+        <tr>
+            <th width="20%" align="left"><label>Podkategoria: </label></th>
+            <th><label>{{advert.subcategory.title}}</label></th>
+        </tr>
+        <tr>
+            <th align="left"><label>Tytuł: </label></th>
+            <th><label>{{advert.title}}</label></th></tr>
+        <tr>
+            <th align="left"><label>Opis: </label></th>
+            <th><label>{{advert.description}}</label></th></tr>
+        <tr>
+            <th align="left"><label>Cena: </label></th>
+            <th><label>{{advert.price}}</label></th></tr>
+        <tr>
+            <th align="left"><label>Miejscowość: </label></th>
+            <th><label>{{advert.city}}</label></th></tr>
+        <tr>
+            <th align="left"><label>Kontakt: </label></th>
+            <th><label>{{advert.contact}}</label></th>
+        </tr>
+        <tr>
+            <th align="left"><label>Załącznik: </label></th>
+            <th><img src="{{ STATIC_URL }}{{ attachment.name }}" alt=""></th>
+        </tr>
+    </table>
+    <br/>
+
+    <form action="/show_advert/{{ advert.id }}" method="post">{% csrf_token %}
+        <input type="hidden" name="advert_id" value="{{ advert.id }}">
+        <table width="100%">
+            <tr>
+                <th><textarea style="width: 600px; height: 100px" name="content"></textarea></th>
+                <th align="right"><input type="submit" value="dodaj komentarz"></th></tr>
+        </table>
+    </form>
+    <br/>
+
+        <h2>komentarze:</h2>
+        {% for comment in comments %}
+            <table width="100%" border="1">
+            <tr>
+                <th width="20%" align="left"><label>{{ comment.user.username }}</label></th>
+                <th align="left"><label>{{comment.content}}</label></th>
+            </tr>
+            </table>
+            <br/>
+        {% endfor %}
+    <table width="100%">
+    <tr align="right">
+        <td><a href="../generate_pdf/{{  advert.id }}">wygeneruj pdf</a></td>
+    </tr>
+    </table>
+{% endblock %}

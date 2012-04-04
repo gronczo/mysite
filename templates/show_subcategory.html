@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block main %}
+{% for subcategory in subcategories %}
+    <p>id: {{subcategory.id}}</p>
+    <p>podkategoria: {{ subcategory.category.title }}</p>
+    <p>tytuł: {{subcategory.title}}</p>
+    <p>opis: {{subcategory.description}}</p>
+<br/>
+{% endfor %}
+{% endblock %}
